@@ -1,0 +1,141 @@
+:root {
+    --white : #fff;
+    --black : #000;
+    --slate : #1e1e1e;
+    --slate-500 : #a3a3a3;
+    
+    /* VARIABEL TEMA WARNA: BLACK GOLD PREMIUM (SINKRON DENGAN HALAMAN TOP UP) */
+    --bg-dark : #0a0a0a;       
+    --blue : rgba(10, 10, 10, 0.92); /* Hitam pekat transparan tipis untuk efek kaca navigasi */
+    --gold-main : #f3af22;     /* Emas cerah menyala utama */
+    --gold-light : #f3e5ab;    
+    --gold-gradient : linear-gradient(to right, #ac7a33, #f3af22, #f3e5ab); 
+    --card-glass : rgba(20, 20, 20, 0.75); /* Transparansi dasar untuk kotak/kartu */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   CONTAINER WRAPPER UTAMA (MEMBERI JARAK AGAR TIDAK TEMBUS KE ATAS NAV)
+   ========================================================= */
+.main-container-wrap {
+    max-width: 1200px;
+    margin: 6.5rem auto 2rem auto; /* Jarak aman di bawah fixed navbar */
+    padding: 0 1.5rem;
+}
+
+/* =========================================================
+   NAVBAR & HEADER SECTION
+   ========================================================= */
+header {
+    background-color: var(--blue);
+}
+
+.logo-brand {
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    color: var(--gold-main);
+}
+
+.logo-brand span {
+    color: var(--white);
+}
+
+/* =========================================================
+   CORE INTEGRASI SWIPER BANNER
+   ========================================================= */
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================================
+   MODERNHINT: CUSTOM GRAPHIC COMPONENT & GLOW EFFECT
+   ========================================================= */
+.btn-glow, .auth-submit-btn {
+    background: var(--gold-main);
+    color: var(--black);
+    font-weight: 800;
+    border: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 15px rgba(243, 175, 34, 0.4);
+}
+
+.auth-submit-btn:hover, .btn-glow:hover {
+    opacity: 0.95;
+    box-shadow: 0 0 25px rgba(243, 175, 34, 0.7);
+    transform: translateY(-1px);
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--slate-500);
+    margin-top: 1.5rem;
+}
+
+.auth-footer a {
+    color: var(--gold-main);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   MEDIA QUERIES TAMPILAN SMARTPHONE (RESPONSIF HP)
+   ========================================================= */
+@media screen and (max-width: 767px) {
+    .main-container-wrap {
+        margin-top: 4.8rem; /* Sempurnakan jarak atas pada device smartphone */
+    }
+    .swiper {
+        height: 160px; 
+    }
+}
+
+/* =========================================================
+   MEDIA QUERY KHUSUS LAPTOP / DESKTOP (min-width: 768px)
+   ========================================================= */
+@media screen and (min-width: 768px) {
+    .swiper {
+        height: 340px;
+    }
+}
+
+/* =========================================================================
+   ADD-ON: KUSTOMISASI BULLET PAGINATION SWIPER BANNER MARKET.IN
+   ========================================================================= */
+.swiper-pagination-bullet {
+    background: #ffffff !important;
+    opacity: 0.4;
+}
+.swiper-pagination-bullet-active {
+    background: #f3af22 !important;
+    opacity: 1 !important;
+    width: 24px !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease;
+}
